@@ -97,6 +97,7 @@ export { default as partner1 } from "./images/partner1.png";
 export { default as partner2 } from "./images/partner2.png";
 export { default as partner3 } from "./images/partner3.png";
 export { default as partner4 } from "./images/partner4.png";
+export { default as partner5 } from "./images/partner5.png";
 export { default as certificate } from "./images/certificate.jpeg";
 
 // Icons

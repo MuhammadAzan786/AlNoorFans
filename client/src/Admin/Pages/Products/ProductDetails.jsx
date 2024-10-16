@@ -13,10 +13,12 @@ import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import AccordionSummary from "@mui/material/AccordionSummary";
+import BoltIcon from "@mui/icons-material/Bolt";
 import "../../../index.css";
 import {
   Backdrop,
   Button,
+  Chip,
   CircularProgress,
   Dialog,
   DialogActions,
@@ -54,6 +56,71 @@ const ProductDetails = () => {
   const [selectedSize, setSelectedSize] = useState({});
   const [selectedColor, setSelectedColor] = useState({});
   const [loading, setLoading] = useState(false);
+
+  const getChipProps = (type) => {
+    switch (type) {
+      case "AC_only":
+        return {
+          label: "AC Only",
+          icon: <BoltIcon />,
+          sx: {
+            backgroundColor: "#e8f5e9", // Light green
+            color: "#4caf50", // Darker green for text
+            borderColor: "#4caf50",
+            borderWidth: 1,
+            borderStyle: "solid",
+          },
+        };
+      case "DC_only":
+        return {
+          label: "DC Only",
+          icon: <BoltIcon />,
+          sx: {
+            backgroundColor: "#e3f2fd", // Light blue
+            color: "#2196f3", // Darker blue for text
+            borderColor: "#2196f3",
+            borderWidth: 1,
+            borderStyle: "solid",
+          },
+        };
+      case "AC_DC":
+        return {
+          label: "AC & DC",
+          icon: <BoltIcon />,
+          sx: {
+            backgroundColor: "#fff3e0", // Light orange
+            color: "#ff9800", // Darker orange for text
+            borderColor: "#ff9800",
+            borderWidth: 1,
+            borderStyle: "solid",
+          },
+        };
+      case "Inverter_Fan":
+        return {
+          label: "Inverter",
+          icon: <BoltIcon />,
+          sx: {
+            backgroundColor: "#fff3e0", // Light orange
+            color: "#ff9800", // Darker orange for text
+            borderColor: "#ff9800",
+            borderWidth: 1,
+            borderStyle: "solid",
+          },
+        };
+      default:
+        return {
+          label: "Unknown",
+          icon: <BoltIcon />,
+          sx: {
+            backgroundColor: "#f5f5f5", // Light grey
+            color: "#9e9e9e", // Darker grey for text
+            borderColor: "#9e9e9e",
+            borderWidth: 1,
+            borderStyle: "solid",
+          },
+        };
+    }
+  };
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -195,6 +262,17 @@ const ProductDetails = () => {
             >
               {productData.name ?? "Product name not available"}
             </Typography>
+            <Box sx={{ my: 1 }}>
+              <Typography
+                sx={{
+                  fontSize: { xs: "1.1rem", sm: "1rem" },
+                  fontWeight: "500",
+                  color: "#F7A400",
+                }}
+              >
+                <Chip {...getChipProps(productData.currentType)} />
+              </Typography>
+            </Box>
             <Box display={"flex"}>
               <Typography
                 sx={{
@@ -203,7 +281,7 @@ const ProductDetails = () => {
                   mr: 1,
                 }}
               >
-                Current Prices:
+                Price:
               </Typography>
               <Typography
                 sx={{

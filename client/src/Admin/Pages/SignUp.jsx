@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, IconButton, InputAdornment } from "@mui/material";
 import {
   Box,
   Button,
@@ -16,6 +16,7 @@ import signup_img from "../../assets/images/signup_img.jpg";
 import { fetchUserData } from "../../redux/Slices/userSlice";
 import toast, { Toaster } from "react-hot-toast";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import * as Yup from "yup";
 import { motion } from "framer-motion";
 
@@ -40,7 +41,11 @@ export default function SignUp() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   const handleSubmit = (values, { setSubmitting }) => {
     setLoading(true);
     axios
@@ -224,7 +229,7 @@ export default function SignUp() {
                         <Field
                           as={TextField}
                           name="password"
-                          type="password"
+                          type={showPassword ? "text" : "password"} // Toggle between text and password
                           label="Password"
                           variant="outlined"
                           fullWidth
@@ -237,6 +242,23 @@ export default function SignUp() {
                                   ? "#fdd"
                                   : "white",
                             },
+                          }}
+                          InputProps={{
+                            endAdornment: (
+                              <InputAdornment position="end">
+                                <IconButton
+                                  onClick={handleClickShowPassword}
+                                  edge="end"
+                                  aria-label="toggle password visibility"
+                                >
+                                  {showPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
                           }}
                         />
                       </Grid>

@@ -54,6 +54,7 @@ const CustomerProductDetail = () => {
   const [colors, setColors] = useState([]);
   const [selectedSize, setSelectedSize] = useState({});
   const [selectedColor, setSelectedColor] = useState({});
+  const [selectedColorName, setSelectedColorName] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [currentItemStockInCart, setCurrentItemStockInCart] = useState(0);
 
@@ -108,6 +109,18 @@ const CustomerProductDetail = () => {
       case "AC_DC":
         return {
           label: "AC & DC",
+          icon: <BoltIcon />,
+          sx: {
+            backgroundColor: "#fff3e0", // Light orange
+            color: "#ff9800", // Darker orange for text
+            borderColor: "#ff9800",
+            borderWidth: 1,
+            borderStyle: "solid",
+          },
+        };
+      case "Inverter_Fan":
+        return {
+          label: "Inverter",
           icon: <BoltIcon />,
           sx: {
             backgroundColor: "#fff3e0", // Light orange
@@ -174,6 +187,7 @@ const CustomerProductDetail = () => {
         quantity: quantity,
         type: selectedSize.size,
         color: selectedColor.color,
+
         price: parseFloat(price),
         imageUrl: image,
         stock: stock,
@@ -185,7 +199,7 @@ const CustomerProductDetail = () => {
       toast.error("Not enough stock for this item");
     }
     if (resultAction.payload === 0) {
-      toast.success("Add to cart successfully");
+      toast.success("Added to cart");
     }
   };
 

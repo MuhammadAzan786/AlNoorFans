@@ -2,7 +2,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Typography,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import logo from "../../assets/images/logo.png";
 import login_img from "../../assets/images/login_img.jpg";
 import { fetchUserData } from "../../redux/Slices/userSlice";
@@ -27,6 +36,11 @@ export default function Login() {
   const user = useSelector((state) => state.Singleuser);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleLogin = (values) => {
     setLoading(true);
@@ -165,24 +179,39 @@ export default function Login() {
                       {({ field, meta }) => (
                         <TextField
                           {...field}
-                          type="password"
+                          type={showPassword ? "text" : "password"} // Toggle between text and password
                           label="Password"
                           variant="outlined"
                           fullWidth
-                          sx={{ marginBottom: 3 }} // Keep for consistency
-                          error={touched.password && Boolean(errors.password)}
+                          sx={{ marginBottom: 3 }}
+                          error={meta.touched && Boolean(meta.error)}
                           helperText={
-                            touched.password && <ErrorMessage name="password" />
+                            meta.touched && <ErrorMessage name="password" />
                           }
                           InputProps={{
+                            endAdornment: (
+                              <InputAdornment position="end">
+                                <IconButton
+                                  onClick={handleClickShowPassword}
+                                  edge="end"
+                                  aria-label="toggle password visibility"
+                                >
+                                  {showPassword ? (
+                                    <VisibilityOff />
+                                  ) : (
+                                    <Visibility />
+                                  )}
+                                </IconButton>
+                              </InputAdornment>
+                            ),
                             sx: {
                               borderColor:
-                                touched.password && Boolean(errors.password)
+                                meta.touched && Boolean(meta.error)
                                   ? "red"
                                   : "inherit",
                               "&:focus": {
                                 borderColor:
-                                  touched.password && Boolean(errors.password)
+                                  meta.touched && Boolean(meta.error)
                                     ? "red"
                                     : "inherit",
                               },

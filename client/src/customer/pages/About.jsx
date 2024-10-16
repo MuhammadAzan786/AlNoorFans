@@ -97,8 +97,8 @@ function About() {
               >
                 Our CEO's relentless dedication has propelled our fan company to
                 new heights, delivering innovation with every product. Through
-                hard work and visionary leadership, they've built a trusted
-                brand known for quality and performance.
+                hard work and visionary leadership, we've built a trusted brand
+                known for quality and performance.
               </Typography>
             </motion.div>
           </Box>
@@ -278,7 +278,7 @@ function About() {
               >
                 Our Quality Control Manager ensures that every product meets the
                 highest standards of excellence. With meticulous attention to
-                detail, they oversee every step of the process to guarantee
+                detail, we oversee every step of the process to guarantee
                 customer satisfaction
               </Typography>
             </motion.div>

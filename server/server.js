@@ -22,7 +22,8 @@ app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({
-    origin:[/\.?alnoorfans\.com$/],
+    // origin:[/\.?alnoorfans\.com$/],
+    origin: process.env.FRONTEND_DOMAIN_NAME,
     credentials: true,
     optionsSuccessStatus: 200,
   })

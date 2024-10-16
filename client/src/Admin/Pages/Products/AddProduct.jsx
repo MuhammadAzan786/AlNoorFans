@@ -389,6 +389,7 @@ const AddProduct = () => {
                     <MenuItem value="AC_only">AC only</MenuItem>
                     <MenuItem value="DC_only">DC only</MenuItem>
                     <MenuItem value="AC_DC">AC and DC</MenuItem>
+                    <MenuItem value="Inverter_Fan">Inverter Fans</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>

@@ -294,3 +294,11 @@ footer p {
 .product-description li a:hover {
   text-decoration: underline; /* Underline on hover */
 }
+.slick-dots {
+  position: unset !important;
+}
+
+.slick-dots li button:before {
+  /* color: red !important; */
+  font-size: 12px !important;
+}

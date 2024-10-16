@@ -2,10 +2,10 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import Marquee from "react-fast-marquee";
-import { partner1, partner2, partner3, partner4 } from "../imports";
+import { partner1, partner2, partner3, partner4, partner5 } from "../imports";
 
 const CoorporationPartners = () => {
-  const partners = [partner1, partner2, partner3, partner4];
+  const partners = [partner1, partner2, partner3, partner4, partner5];
 
   return (
     <>
@@ -23,7 +23,7 @@ const CoorporationPartners = () => {
               fontWeight: "bold",
             }}
           >
-            Corporation Partners
+            Satisfied Customers{" "}
           </Typography>
         </Box>
 
