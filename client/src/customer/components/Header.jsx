@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PersonIcon from '@mui/icons-material/Person';
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import {
@@ -123,7 +124,8 @@ const Header = () => {
 
   const renderNavItems = (items) =>
     items.map((item) => (
-      <ListItem key={item.label} disablePadding>
+
+      < ListItem key={item.label} disablePadding >
         <ListItemButton
           sx={{
             textAlign: "center",
@@ -141,19 +143,20 @@ const Header = () => {
           component={item.action ? "button" : NavLink}
           to={item.path || null}
           onClick={item.action || null}
+
         >
           <ListItemText
             primary={item.label}
             sx={{
               "& .MuiTypography-root": {
                 textTransform: "uppercase",
-                fontWeight: 600,
+                fontWeight: 500,
                 fontSize: "0.9rem",
               },
             }}
           />
         </ListItemButton>
-      </ListItem>
+      </ListItem >
     ));
   const drawer = (
     <Box
@@ -188,11 +191,11 @@ const Header = () => {
         component="nav"
         sx={{
           backgroundColor: scrolled ? "#fff" : "transparent",
-          transition: "background-color 0.3s ease",
+          transition: "background-color 0.1s ease-in-out",
           boxShadow: scrolled ? 2 : "none",
         }}
       >
-        <Container sx={{ paddingX: { xs: 0, sm: 0, md: 2 } }}>
+        <Container sx={{ paddingX: { xs: 0, sm: 0, md: 0 } }}>
           <Toolbar
             sx={{
               justifyContent: "space-between",
@@ -232,8 +235,8 @@ const Header = () => {
                 src={logo}
                 alt="Logo"
                 sx={{
-                  marginLeft: { xs: "30px", sm: "35px", md: "45px", lg: "0px" },
-                  width: { xs: 70, sm: 80, md: 90, lg: 90 }, // Maximum width
+                  marginLeft: { xs: "30px", sm: "35px", md: "0px", lg: "0px" },
+                  width: { xs: 100, sm: 120, md: 150, lg: 150 }, // Maximum width
                   display: { xs: "block", sm: "block", md: "block" }, // Hide on small screens and up
                   maxWidth: "100%",
                 }}
@@ -242,7 +245,7 @@ const Header = () => {
             </Box>
             <Box
               sx={{
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", md: "flex", padding: "1.4rem 0px" },
                 justifyContent: "center",
                 flexGrow: 1,
               }}
@@ -259,21 +262,22 @@ const Header = () => {
                     }
                   }}
                   sx={{
-                    marginLeft: 3,
-                    fontWeight: "700",
+                    // marginLeft: 3,
+                    fontWeight: "500",
                     fontSize: "1rem",
-
+                    padding: "6px 14px",
+                    boxSizing: "border-box",
                     color: scrolled ? "black" : "black", // White text for contrast
                     fontFamily: "'Roboto', sans-serif",
-                    transition: "all 0.1s ease, transform 0.1s ease",
+                    transition: "all 0.1s ease-in-out, transform 0.1s ease-in-out",
                     "&:hover": {
-                      color: "#f9b735", // Orange hover color
-                      // transform: "scale(1.05)",
                       backgroundColor: "rgba(13, 13, 13, 0.08)",
-                      borderRadius: "0px",
+                      borderRadius: "4px",
                     },
                     "&.active": {
                       color: "#f7a400",
+                      borderBottom: "1px solid",
+                      borderRadius: "unset"
                     },
                   }}
                 >
@@ -283,28 +287,56 @@ const Header = () => {
             </Box>
 
             {user.data === null ? (
-              <Typography
-                onClick={() => navigate("/login")}
-                sx={{
-                  fontWeight: "500",
-                  fontSize: "0.95rem",
-                  color: "black",
-                  fontFamily: "'Roboto', sans-serif",
-                  transition: "all 0.3s ease, transform 0.3s ease",
-                  cursor: "pointer",
-                  border: "2px solid black", // Orange border for contrast
-                  paddingX: 2,
-                  paddingY: 1,
-                  // borderRadius: "3px",
-                  "&:hover": {
-                    color: "#fff", // Match background color
-                    backgroundColor: "#0b355b", // Orange background on hover
-                    borderColor: "#0b355b",
-                  },
-                }}
-              >
-                Login
-              </Typography>
+              <Box sx={{ boxSizing: "border-box" }}>
+                <Button
+                  onClick={() => navigate("/login")}
+                  sx={{
+                    fontWeight: "500",
+                    fontFamily: "'Roboto', sans-serif",
+                    transition: "all 0.1s ease-in-out",
+                    cursor: "pointer",
+                    background: "#0b355b",
+                    color: "#fff",
+                    border: "2px solid #0B355B",
+                    paddingX: 5,
+                    paddingY: 1,
+                    px: {
+                      xs: 1,   // Extra small screens
+                      sm: 3,   // Small screens
+                      md: 5,   // Medium screens
+                      lg: 5,   // Large screens
+                    },
+                    py: {
+                      xs: 0.5,   // Extra small screens
+                      sm: 1,   // Small screens
+                      md: 1,   // Medium screens
+                      lg: 1,   // Large screens
+                    },
+                    // Font size for different screen sizes
+                    fontSize: {
+                      xs: '0.75rem',  // Extra small screens
+                      sm: '0.875rem', // Small screens
+                      md: '0.95rem',     // Medium screens
+                      lg: '0.95rem',  // Large screens
+                    },
+                    borderRadius: "4px",
+                    textTransform: "uppercase",
+                    boxSizing: "border-box",
+                    boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.10) 0px 10px 10px",
+                    "&:hover": {
+                      background: "#F5F5F5",
+                      border: "2px solid #0B355B",
+                      color: "#0B355B",
+                      fontWeight: "600",
+                      transition: "all 0.3s ease",
+                      boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
+
+                    }
+                  }}
+                >
+                  Login
+                </Button>
+              </Box>
             ) : (
               <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
                 <IconButton
@@ -326,8 +358,8 @@ const Header = () => {
                   sx={{ padding: 0 }}
                 >
                   <Tooltip title={user?.data?.username}>
-                    <IconButton onClick={handleMenuOpen}>
-                      <AccountCircleIcon
+                    <IconButton onClick={handleMenuOpen} sx={{ p: { xs: 0 } }}>
+                      <PersonIcon
                         sx={{ fontSize: "1.8rem", color: "#333" }}
                       />
                     </IconButton>
@@ -364,8 +396,9 @@ const Header = () => {
           {drawer}
         </Drawer>
       </Box>
-    </Box>
+    </Box >
   );
 };
 
 export default Header;
+

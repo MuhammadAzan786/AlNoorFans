@@ -28,8 +28,9 @@ const verifyToken = async (req, res, next) => {
 
     next();
   } catch (err) {
+console.error("Error verifying token",err.message);
     return res.status(401).send("Invalid Token");
   }
 };
 
-module.exports = verifyToken;
+module.exports = verifyToken; 
