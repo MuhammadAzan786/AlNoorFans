@@ -16,7 +16,7 @@ const ProductsTable = ({ products, onDelete }) => {
   const [loading, setLoading] = useState(false);
 
   const handleEdit = (row) => {
-    console.log(row);
+    // console.log(row);
     navigate(`/admin/editproduct/${row._id}`);
   };
 

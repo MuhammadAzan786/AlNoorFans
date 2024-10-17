@@ -165,7 +165,7 @@ const ProductDetails = () => {
         setProductData(product);
 
         setImages(formattedImages);
-        console.log(images);
+        // console.log(images);
       }
     } catch (error) {
       console.error("Error While receiving data from backend:", error);

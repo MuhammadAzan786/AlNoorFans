@@ -153,7 +153,14 @@ export default function SignUp() {
                   justifyContent: "center", // Center the logo horizontally
                 }}
               >
-                <img src={logo} alt="Logo Img" style={{ height: "70px" }} />
+                <img
+                  src={logo}
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                  alt="Logo Img"
+                  style={{ height: "70px" }}
+                />
               </Box>
 
               <Formik

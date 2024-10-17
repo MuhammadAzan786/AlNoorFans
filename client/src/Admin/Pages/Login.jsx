@@ -128,6 +128,9 @@ export default function Login() {
                 }}
               >
                 <img
+                  onClick={() => {
+                    navigate("/");
+                  }}
                   src={logo}
                   alt="Logo"
                   style={{

@@ -66,7 +66,7 @@ const AddCategoryForm = () => {
       setLoading(false);
     } catch (error) {
       // In case of an error, log it and show an error toast notification.
-      console.log("Error creating category");
+      // console.log("Error creating category");
       toast.error("Error creating category!");
     } finally {
       setLoading(false);

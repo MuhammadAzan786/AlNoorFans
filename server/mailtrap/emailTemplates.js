@@ -115,7 +115,7 @@ const WELCOME_EMAIL = `<!DOCTYPE html>
                 <li><strong>Latest Updates:</strong> Stay informed about new products and innovations in our lineup.</li>
                 <li><strong>Dedicated Support:</strong> Our team is always here to assist you with any inquiries or concerns.</li>
             </ul>
-            <p style="color: #555; line-height: 1.6;">To get started, we recommend exploring our website and checking out our latest fan designs. If you have any questions or need assistance, feel free to reach out to our support team at <a href="mailto:info@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">info@alnoorfans.com</a></p>
+            <p style="color: #555; line-height: 1.6;">To get started, we recommend exploring our website and checking out our latest fan designs. If you have any questions or need assistance, feel free to reach out to our support team at <a href="mailto:support@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">support@alnoorfans.com</a></p>
             <p style="color: #555; line-height: 1.6;">Thank you for choosing Al-Noor Fans. We look forward to serving you and making your experience with us exceptional!</p>
         </div>
         <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
@@ -124,14 +124,17 @@ const WELCOME_EMAIL = `<!DOCTYPE html>
             <p style="color: #777; font-size: 14px; margin: 5px 0;"><strong>Contact Us:</strong></p>
            
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Email: <a href="mailto:info@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">info@alnoorfans.com</a></p>
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Phone: +92 345 6333393</p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;"><a href="mailto:support@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">support@alnoorfans.com</a></p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">WhatsApp: +92 336 3336024</p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">Landline: +92 53 3726024</p>
         </div>
     </div>
 </body>
 </html>
 `;
 
-const ORDER_CONFIRMATION = `<!DOCTYPE html>
+const ORDER_CONFIRMATION = `
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -145,10 +148,11 @@ const ORDER_CONFIRMATION = `<!DOCTYPE html>
         </div>
         <div style="padding-bottom: 20px;">
             <p style="color: #555; line-height: 1.6;">Dear Customer,</p>
-            <p style="color: #555; line-height: 1.6;">Thank you for choosing Al-Noor Fans! We are delighted to confirm that we have received your order.</p>
+            <p style="color: #555; line-height: 1.6;">Thank you for choosing Al-Noor Fans! We are excited to confirm that your order has been received.</p>
             <p style="color: #555; line-height: 1.6;">Your order number is <strong>{{ORDER_NUMBER}}</strong>.</p>
-            <p style="color: #555; line-height: 1.6;">We are currently processing your order and will notify you once it has been shipped. If you have any questions or need further assistance, please do not hesitate to contact us on <a style="color: #1a73e8; text-decoration: none;">+92 345 6333393</a>.</p>
-            <p style="color: #555; line-height: 1.6;">Thank you once again for choosing Al-Noor Fans. We appreciate your business and look forward to serving you again!</p>
+            <p style="color: #555; line-height: 1.6;">We are currently processing your order and will notify you once it has been shipped. If you have any questions or need assistance, please feel free to contact us at <a style="color: #1a73e8; text-decoration: none;">+92 336 3336024 / +92 53 3726024</a>.</p>
+            <p style="color: #555; line-height: 1.6;">As your next step, please make the payment to one of the provided accounts listed below and share your payment receipt via WhatsApp at <a style="color: #1a73e8; text-decoration: none;">+92 336 3336024</a>. Once we confirm your payment, your order will be prepared for shipment.</p>
+            <p style="color: #555; line-height: 1.6;">Thank you once again for choosing Al-Noor Fans. We truly appreciate your business and look forward to serving you!</p>
         </div>
         <div style="padding-bottom: 20px;">
             <h2 style="color: #333; font-size: 20px;">Payment Details</h2>
@@ -167,15 +171,12 @@ const ORDER_CONFIRMATION = `<!DOCTYPE html>
         <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Best regards,</p>
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Al-Noor Fans Team</p>
-            <p style="color: #777; font-size: 14px; margin: 5px 0;"><strong>Contact Us:</strong></p>
-           
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Phone: +92 345 6333393</p>
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Mobile: +92 345 6333393</p> <!-- Added mobile number -->
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">Phone: +92 53 3726024</p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">Mobile: +92 336 3336024</p>
         </div>
     </div>
 </body>
 </html>
-
 
 `;
 const PAYMENT_CONFIRMATION = `<!DOCTYPE html>
@@ -194,7 +195,7 @@ const PAYMENT_CONFIRMATION = `<!DOCTYPE html>
             <p style="color: #555; line-height: 1.6;">Dear Customer,</p>
             <p style="color: #555; line-height: 1.6;">We are pleased to inform you that your payment has been successfully received.</p>
             <p style="color: #555; line-height: 1.6;">Your order is now confirmed, and we are preparing it for shipment. You will receive a notification once your order has been dispatched.</p>
-            <p style="color: #555; line-height: 1.6;">If you have any questions or require further assistance, please feel free to contact us on +92 345 6333393.</p>
+            <p style="color: #555; line-height: 1.6;">If you have any questions or require further assistance, please feel free to contact us on +92 336 3336024.</p>
             <p style="color: #555; line-height: 1.6;">Thank you for your trust in Al-Noor Fans. We appreciate your business and look forward to serving you again!</p>
         </div>
         <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
@@ -202,8 +203,10 @@ const PAYMENT_CONFIRMATION = `<!DOCTYPE html>
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Al-Noor Fans Team</p>
             <p style="color: #777; font-size: 14px; margin: 5px 0;"><strong>Contact Us:</strong></p>
            
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Email: <a href="info@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">info@alnoorfans.com</a></p>
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Phone: +92 345 6333393</p>
+          <strong>Email:</strong> <a href="mailto:info@alnoorfans.com">info@alnoorfans.com</a><br>
+                <strong>Email:</strong> <a href="mailto:support@alnoorfans.com">support@alnoorfans.com</a><br>
+             <p style="color: #777; font-size: 14px; margin: 5px 0;">Phone: +92 53 3726024</p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">Mobile: +92 336 3336024</p>
         </div>
     </div>
 </body>
@@ -329,7 +332,8 @@ const ORDER_SHIPPED = `<!DOCTYPE html>
             <p>For any questions or support, feel free to reach us at:</p>
             <p class="footer-contact">
                 <strong>Email:</strong> <a href="mailto:info@alnoorfans.com">info@alnoorfans.com</a><br>
-                <strong>Phone:</strong> +92 345 6333393
+                <strong>Email:</strong> <a href="mailto:support@alnoorfans.com">support@alnoorfans.com</a><br>
+                <strong>Phone:</strong> +92 336 3336024
             </p>
            
         </div>
@@ -352,12 +356,15 @@ const ORDER_CANCELED = `<!DOCTYPE html>
         </div>
         <div style="padding-bottom: 20px;">
             <p style="color: #555; line-height: 1.6;">Dear Customer,</p>
-            <p style="color: #555; line-height: 1.6;">We regret to inform you that your order has been canceled. If you have any questions, please contact us on +92 345 6333393.</p>
+            <p style="color: #555; line-height: 1.6;">We regret to inform you that your order has been canceled. If you have any questions, please contact us on +92 336 3336024.</p>
             <p style="color: #555; line-height: 1.6;">We apologize for any inconvenience.</p>
         </div>
         <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Best regards,</p>
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Al-Noor Fans Team</p>
+            <strong>Email:</strong> <a href="mailto:info@alnoorfans.com">info@alnoorfans.com</a><br>
+                <strong>Email:</strong> <a href="mailto:support@alnoorfans.com">support@alnoorfans.com</a><br>
+                <strong>Phone:</strong> +92 336 3336024
         </div>
     </div>
 </body>

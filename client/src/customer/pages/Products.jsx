@@ -55,7 +55,7 @@ const Products = () => {
   useEffect(() => {
     if (stateCategories.data) {
       setCategories(stateCategories.data);
-      console.log(categories);
+      // console.log(categories);
     }
   }, [stateCategories.data]);
 
@@ -66,7 +66,7 @@ const Products = () => {
   const handlePageClick = (event) => {
     setCurrentPage(event.selected + 1);
 
-    console.log(event.selected);
+    // console.log(event.selected);
   };
 
   useEffect(() => {

@@ -78,7 +78,7 @@ const EditProduct = () => {
   const handleImageChange = async (e) => {
     const files = Array.from(e.target.files);
     setProductImages(files);
-    console.log(uploadedFiles);
+    // console.log(uploadedFiles);
 
     const promises = files.map((file) => {
       return new Promise((resolve, reject) => {
@@ -223,7 +223,7 @@ const EditProduct = () => {
     });
     formData.append("sizes", JSON.stringify(sizes));
 
-    console.log(...formData);
+    // console.log(...formData);
 
     try {
       const response = await axios.put(
@@ -436,6 +436,9 @@ const EditProduct = () => {
                             <div className="kb-modal-data-title">
                               <div className="kb-data-title">
                                 <h6>Product Thumbnail</h6>
+                                <Typography variant="body2">
+                                  Thumbnail size (500px * 500px)
+                                </Typography>
                               </div>
                             </div>
 
@@ -514,7 +517,10 @@ const EditProduct = () => {
                           <div className="kb-data-box">
                             <div className="kb-modal-data-title">
                               <div className="kb-data-title">
-                                <h6>Multiple File Upload With Preview</h6>
+                                <h6>Product Images</h6>
+                                <Typography variant="body2">
+                                  Product Image size (500px * 500px)
+                                </Typography>
                               </div>
                             </div>
 

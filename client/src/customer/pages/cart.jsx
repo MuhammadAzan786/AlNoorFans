@@ -38,7 +38,7 @@ const CartPage = () => {
 
   const cart = useSelector((state) => state.cart);
 
-  console.log("Cart", cart);
+  // console.log("Cart", cart);
 
   // Now you can access: cart.items, cart.totalQuantity, cart.totalAmount
   useEffect(() => {
@@ -73,7 +73,7 @@ const CartPage = () => {
   };
 
   const handleRemoveItem = (itemId, quantity, type, color) => {
-    console.log(itemId, quantity, type, color);
+    // console.log(itemId, quantity, type, color);
     dispatch(removeFromCartOnServer({ itemId, quantity, type, color }));
     toast.success("Item Removed from Cart");
   };

@@ -210,9 +210,9 @@ const Invoice = () => {
 
   const [data, setOrderData] = useState(null);
 
-  console.log(data);
+  // console.log(data);
   useEffect(() => {
-    console.log("useffect")
+    // console.log("useffect")
     const getOrderDeatail = async () => {
       const response = await axios.get(
         `${import.meta.env.VITE_BACKEND_DOMAIN_NAME}/api/order/getorder/${id}`,

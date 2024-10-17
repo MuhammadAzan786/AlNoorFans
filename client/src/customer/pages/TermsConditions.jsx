@@ -262,7 +262,8 @@ const TermsAndConditions = () => {
                     If you haven’t received a refund yet, first check your bank
                     account, then contact your bank. There may be a processing
                     delay. If you still have not received your refund, please
-                    contact us at <Link href="+92 053 3530447">+92 053 3530447</Link>.
+                    contact us at{" "}
+                    <Link href="+92 336 3336024">+92 336 3336024</Link>.
                   </Typography>
                 </AccordionDetails>
               </Accordion>
@@ -305,12 +306,12 @@ const TermsAndConditions = () => {
                   <Typography variant="body2" sx={{ mb: 2 }}>
                     We replace items only if they are defective or damaged. If
                     you need to exchange an item, contact us at{" "}
-                    <Link href="tel:+000000000">+000000000</Link> and send your
-                    item to:
+                    <Link href="+92 336 3336024">+92 336 3336024</Link> and send
+                    your item to:
                     <strong>
                       {" "}
-                      Al-Noor Electric Industries, 75-B Small Industrial Estate
-                      Area Gujrat 50700, Punjab Pakistan
+                      Al-Noor Electric Industries, 75-B, S.I.E, G.T Road,
+                      Gujrat, Punjab Pakistan Postal code 50700
                     </strong>
                     .
                   </Typography>
@@ -333,8 +334,8 @@ const TermsAndConditions = () => {
                   <Typography variant="body2" sx={{ mb: 2 }}>
                     To return your product, mail it to:{" "}
                     <strong>
-                      Al-Noor Electric Industries, 75-B Small Industrial Estate
-                      Area Gujrat 50700, Punjab Pakistan
+                      Al-Noor Electric Industries, 75-B, S.I.E, G.T Road,
+                      Gujrat, Punjab Pakistan Postal code 50700
                     </strong>
                     . You are responsible for shipping costs. If you receive a
                     refund, return shipping costs will be deducted.
@@ -486,8 +487,8 @@ const TermsAndConditions = () => {
               </Typography>
               <Typography variant="body2">
                 Contact us at{" "}
-                <Link href="+92 053 3530447">+92 053 3530447</Link>{" "}
-                for any questions related to refunds and returns.
+                <Link href="+92 336 3336024">+92 336 3336024</Link> for any
+                questions related to refunds and returns.
               </Typography>
             </Box>
           </Grid>

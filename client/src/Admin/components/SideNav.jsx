@@ -89,16 +89,19 @@ function SideNav(props) {
     }
   };
 
-  const handleLogout = () => {
-    axios
-      .post(LOGOUT_API, { withCredentials: true })
-      .then(() => {
-        dispatch(clearPersistedUser());
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleLogout = async () => {
+    try {
+      // Await the response from the API call to ensure it finishes
+      await axios.post(LOGOUT_API, { withCredentials: true });
+
+      // Clear the user data after successful logout
+      dispatch(clearPersistedUser());
+
+      // Now, navigate to the homepage after everything is done
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

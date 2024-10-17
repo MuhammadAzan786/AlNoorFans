@@ -9,18 +9,18 @@ cloudinary.config({
 
 const uploadOnCloudinary = async (localFilePath) => {
   try {
-    console.log("Enter is cloudinary", localFilePath);
+    // console.log("Enter is cloudinary", localFilePath);
     if (!localFilePath) return null;
     const responce = await cloudinary.uploader.upload(localFilePath, {
       resource_type: "auto",
     });
 
-    console.log("file uploaded successfully", responce.url);
+    // console.log("file uploaded successfully", responce.url);
     fs.unlinkSync(localFilePath);
     return responce;
   } catch (error) {
     fs.unlinkSync(localFilePath);
-    console.log(error);
+    // console.log(error);
     return null;
   }
 };
@@ -28,7 +28,7 @@ const uploadOnCloudinary = async (localFilePath) => {
 const deleteImage = async (publicId) => {
   try {
     const result = await cloudinary.uploader.destroy(publicId);
-    console.log("Image deleted successfully:", result);
+    // console.log("Image deleted successfully:", result);
     return result;
   } catch (error) {
     console.error("Error deleting image:", error);

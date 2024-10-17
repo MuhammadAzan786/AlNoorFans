@@ -166,9 +166,10 @@ const AddProduct = () => {
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <Typography variant="h5" sx={{ fontWeight: "bold", marginBottom: 0 }}>
-              Banner Images
+            <Typography variant="h5" sx={{ fontWeight: "bold", marginBottom: 1 }}>
+              Banners
             </Typography>
+            <Typography variant="body2" sx={{marginBottom:1}}>Banner Size (1920px * 850px)</Typography>
             <div className="file-upload-box">
               <input
                 type="file"

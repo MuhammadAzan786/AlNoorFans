@@ -19,16 +19,23 @@ const Footer = () => {
               {/* Single Widget */}
               <Box className="single-footer about">
                 <Box className="logo">
-                  <Link href="index.html">
-                    <img src={img1} style={{ height: "75px" }} alt="#" />
+                  <Link>
+                    <img
+                      src={img1}
+                      onClick={() => {
+                        navigate("/");
+                      }}
+                      style={{ height: "75px" }}
+                      alt="logo"
+                    />
                   </Link>
                 </Box>
                 <Typography className="text" variant="body2" mt={2}>
-                  Since its establishement in 1975, Al Noor Fans<sup>TM</sup> is recognized
-                  as a symbol of Quality & Excellence in the National market. We
-                  are an ISO 9001:2008 certified company with all our production
-                  processes benchmarked as per the highest International
-                  Standards.
+                  Since its establishement in 1975, Al Noor Fans<sup>TM</sup> is
+                  recognized as a symbol of Quality & Excellence in the National
+                  market. We are an ISO 9001:2008 certified company with all our
+                  production processes benchmarked as per the highest
+                  International Standards.
                 </Typography>
                 <Typography className="call" variant="body2" mt={2}>
                   Got Question? Call us 24/7
@@ -40,7 +47,7 @@ const Footer = () => {
                         fontWeight: "600",
                       }}
                     >
-                      +92 053 3530447 / +92 053 3011954
+                      +92 336 3336024 / +92 53 3726024
                     </Typography>
                   </span>
                 </Typography>
@@ -111,10 +118,12 @@ const Footer = () => {
                 </Typography>
                 <Box className="contact">
                   <ul>
+                    <li>Al-Noor Electric Industries</li>
                     <li>75-B. S l, E. G. T. Road</li>
                     <li>Gujrat, Pakistan.</li>
                     <li>info@alnoorfans.com</li>
-                    <li>+92 345 6333393</li>
+                    <li>support@alnoorfans.com</li>
+                    <li>+92 336 3336024</li>
                   </ul>
                 </Box>
                 <ul className="social-links" style={{ marginTop: "20px" }}>

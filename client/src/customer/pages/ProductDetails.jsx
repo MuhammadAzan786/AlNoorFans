@@ -163,8 +163,8 @@ const CustomerProductDetail = () => {
   const open = Boolean(anchorEl);
 
   const addToCart = async (name, id, price, image, stock) => {
-    console.log("name", name, "image", image);
-    console.log("dataaaaa", user.data);
+    // console.log("name", name, "image", image);
+    // console.log("dataaaaa", user.data);
     if (user.data === null) {
       toast.error("Please login to add items to cart");
 
@@ -172,7 +172,7 @@ const CustomerProductDetail = () => {
     }
 
     if (user.data.isVerified === false) {
-      console.log("verified", user.data.isVerified);
+      // console.log("verified", user.data.isVerified);
       toast.error("Please verify your account to add items to cart");
       setTimeout(() => {
         navigate("/emailverification");
@@ -193,7 +193,7 @@ const CustomerProductDetail = () => {
         stock: stock,
       })
     );
-    console.log("reasullt", resultAction);
+    // console.log("reasullt", resultAction);
 
     if (resultAction.payload === 1) {
       toast.error("Not enough stock for this item");

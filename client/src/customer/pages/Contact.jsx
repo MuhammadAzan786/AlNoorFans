@@ -291,7 +291,7 @@ const Contact = () => {
                     justifyContent: "space-between",
                   }}
                 >
-                  <Box sx={{ marginBottom: 4 }}>
+                  <Box sx={{ marginBottom: 1 }}>
                     <Typography
                       variant="h4"
                       color="#333"
@@ -300,13 +300,18 @@ const Contact = () => {
                       <Phone sx={{ color: "#475F7B", marginRight: 1 }} />
                       Call us Now:
                     </Typography>
-                    <List>
-                      <ListItem>
-                        <ListItemText primary="+92 345 6333393" />
+                    <List sx={{ padding: 0 }}>
+                      <ListItem sx={{ paddingY: 0.5 }}>
+                        {" "}
+                        {/* Reduces vertical padding */}
+                        <ListItemText primary="+92 336 3336024" />
+                      </ListItem>
+                      <ListItem sx={{ paddingY: 0.5 }}>
+                        <ListItemText primary="+92 53 3726024" />
                       </ListItem>
                     </List>
                   </Box>
-                  <Box sx={{ marginBottom: 4 }}>
+                  <Box sx={{ marginBottom: 1 }}>
                     <Typography
                       variant="h4"
                       color="#333"
@@ -316,12 +321,15 @@ const Contact = () => {
                       Email:
                     </Typography>
                     <List>
-                      <ListItem>
+                      <ListItem sx={{ paddingY: 0.5 }}>
                         <ListItemText primary={<a>info@alnoorfans.com</a>} />
+                      </ListItem>
+                      <ListItem sx={{ paddingY: 0.5 }}>
+                        <ListItemText primary={<a>support@alnoorfans.com</a>} />
                       </ListItem>
                     </List>
                   </Box>
-                  <Box sx={{ marginBottom: 3 }}>
+                  <Box sx={{ marginBottom: 1 }}>
                     <Typography
                       variant="h4"
                       color="#333"
@@ -331,12 +339,15 @@ const Contact = () => {
                       Our Address:
                     </Typography>
                     <List>
+                      <ListItem sx={{paddingY:0.5}}>
+                        <ListItemText primary="Al-Noor Electric Industries, 75-B, S.I.E, G.T Road, Gujrat, Punjab Pakistan" />
+                      </ListItem>
                       <ListItem>
-                        <ListItemText primary="75-B, Small Industrial Estate G.T Road, Industry Area Main Rd II, Small Industrial Area, Gujrat, Punjab 50700" />
+                        <ListItemText primary="Postal code 50700" />
                       </ListItem>
                     </List>
                   </Box>
-                  <Box sx={{ marginBottom: 4 }}>
+                  <Box sx={{ marginBottom: 1 }}>
                     <Typography
                       variant="h4"
                       color="#333"

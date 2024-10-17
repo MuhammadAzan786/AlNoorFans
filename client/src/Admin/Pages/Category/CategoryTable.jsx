@@ -15,7 +15,7 @@ const CategoryTable = ({ categories, onDelete }) => {
   const [loading, setLoading] = useState(false);
 
   const handleEdit = (row) => {
-    console.log(row);
+    // console.log(row);
     navigate(`/admin/editcategory/${row._id}`);
   };
 

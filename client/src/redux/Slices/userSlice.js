@@ -5,10 +5,10 @@ import storage from "redux-persist/lib/storage";
 // Thunk to fetch user data
 export const fetchUserData = createAsyncThunk("fetchUserData", async (idz) => {
   const { id } = idz;
-  console.log("issss", id);
+  // console.log("issss", id);
 
   const response = await fetch(`${import.meta.env.VITE_BACKEND_DOMAIN_NAME}/api/authentication/getadmin/${id}`);
-  console.log("heppening", response);
+  // console.log("heppening", response);
 
   return response.json();
 });

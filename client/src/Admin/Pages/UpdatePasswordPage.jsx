@@ -21,7 +21,7 @@ const UpdatePasswordPage = () => {
       setError("Passwords do not match");
       return;
     }
-    console.log(PASSWORD_UPDATE_API);
+    // console.log(PASSWORD_UPDATE_API);
     axios
       .post(PASSWORD_UPDATE_API, { password }, { withCredentials: true })
       .then((res) => {
@@ -33,7 +33,7 @@ const UpdatePasswordPage = () => {
       })
       .catch((err) => {
         toast.error("Failed to update password. Please try again.");
-        console.log(err);
+        // console.log(err);
       });
   };
 

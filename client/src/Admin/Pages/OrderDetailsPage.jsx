@@ -36,7 +36,7 @@ const OrderDetailsPage = () => {
   const [orders, setOrder] = useState({});
   const state = useSelector((state) => state.singleOrder);
 
-  console.log(state);
+  // console.log(state);
 
   const user = useSelector((state) => state.Singleuser);
   useEffect(() => {

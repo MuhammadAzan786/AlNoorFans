@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import {
@@ -124,8 +124,7 @@ const Header = () => {
 
   const renderNavItems = (items) =>
     items.map((item) => (
-
-      < ListItem key={item.label} disablePadding >
+      <ListItem key={item.label} disablePadding>
         <ListItemButton
           sx={{
             textAlign: "center",
@@ -143,7 +142,6 @@ const Header = () => {
           component={item.action ? "button" : NavLink}
           to={item.path || null}
           onClick={item.action || null}
-
         >
           <ListItemText
             primary={item.label}
@@ -156,7 +154,7 @@ const Header = () => {
             }}
           />
         </ListItemButton>
-      </ListItem >
+      </ListItem>
     ));
   const drawer = (
     <Box
@@ -177,7 +175,14 @@ const Header = () => {
           justifyContent: "center",
         }}
       >
-        <img className="w-24 sm:mx-0 mx-auto" src={logo} alt="Logo" />
+        <img
+          onClick={() => {
+            navigate("/");
+          }}
+          className="w-24 sm:mx-0 mx-auto"
+          src={logo}
+          alt="Logo"
+        />
       </Typography>
       <List>{renderNavItems(getNavItems())}</List>
     </Box>
@@ -232,6 +237,9 @@ const Header = () => {
             <Box>
               <Box
                 component="img"
+                onClick={() => {
+                  navigate("/");
+                }}
                 src={logo}
                 alt="Logo"
                 sx={{
@@ -269,7 +277,8 @@ const Header = () => {
                     boxSizing: "border-box",
                     color: scrolled ? "black" : "black", // White text for contrast
                     fontFamily: "'Roboto', sans-serif",
-                    transition: "all 0.1s ease-in-out, transform 0.1s ease-in-out",
+                    transition:
+                      "all 0.1s ease-in-out, transform 0.1s ease-in-out",
                     "&:hover": {
                       backgroundColor: "rgba(13, 13, 13, 0.08)",
                       borderRadius: "4px",
@@ -277,7 +286,7 @@ const Header = () => {
                     "&.active": {
                       color: "#f7a400",
                       borderBottom: "1px solid",
-                      borderRadius: "unset"
+                      borderRadius: "unset",
                     },
                   }}
                 >
@@ -301,37 +310,38 @@ const Header = () => {
                     paddingX: 5,
                     paddingY: 1,
                     px: {
-                      xs: 1,   // Extra small screens
-                      sm: 3,   // Small screens
-                      md: 5,   // Medium screens
-                      lg: 5,   // Large screens
+                      xs: 1, // Extra small screens
+                      sm: 3, // Small screens
+                      md: 5, // Medium screens
+                      lg: 5, // Large screens
                     },
                     py: {
-                      xs: 0.5,   // Extra small screens
-                      sm: 1,   // Small screens
-                      md: 1,   // Medium screens
-                      lg: 1,   // Large screens
+                      xs: 0.5, // Extra small screens
+                      sm: 1, // Small screens
+                      md: 1, // Medium screens
+                      lg: 1, // Large screens
                     },
                     // Font size for different screen sizes
                     fontSize: {
-                      xs: '0.75rem',  // Extra small screens
-                      sm: '0.875rem', // Small screens
-                      md: '0.95rem',     // Medium screens
-                      lg: '0.95rem',  // Large screens
+                      xs: "0.75rem", // Extra small screens
+                      sm: "0.875rem", // Small screens
+                      md: "0.95rem", // Medium screens
+                      lg: "0.95rem", // Large screens
                     },
                     borderRadius: "4px",
                     textTransform: "uppercase",
                     boxSizing: "border-box",
-                    boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.10) 0px 10px 10px",
+                    boxShadow:
+                      "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.10) 0px 10px 10px",
                     "&:hover": {
                       background: "#F5F5F5",
                       border: "2px solid #0B355B",
                       color: "#0B355B",
                       fontWeight: "600",
                       transition: "all 0.3s ease",
-                      boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
-
-                    }
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
+                    },
                   }}
                 >
                   Login
@@ -359,9 +369,7 @@ const Header = () => {
                 >
                   <Tooltip title={user?.data?.username}>
                     <IconButton onClick={handleMenuOpen} sx={{ p: { xs: 0 } }}>
-                      <PersonIcon
-                        sx={{ fontSize: "1.8rem", color: "#333" }}
-                      />
+                      <PersonIcon sx={{ fontSize: "1.8rem", color: "#333" }} />
                     </IconButton>
                   </Tooltip>
                 </IconButton>
@@ -396,9 +404,8 @@ const Header = () => {
           {drawer}
         </Drawer>
       </Box>
-    </Box >
+    </Box>
   );
 };
 
 export default Header;
-

@@ -95,7 +95,7 @@ const AddProduct = () => {
   };
 
   const handleDeleteDialogOpen = (id, type) => {
-    console.log(id, type);
+    // console.log(id, type);
 
     setFileToDelete(id);
     setDeleteType(type);
@@ -198,11 +198,11 @@ const AddProduct = () => {
     // Update state with the new array
     setSizes(updatedSizes);
 
-    console.log(sizes); // Logs the old state before the state update
-    console.log(updatedSizes); // Logs the new state after the color is removed
-    console.log(
-      `Delete Clicked at size index ${sizeIndex} and color index ${colorIndex}`
-    );
+    // console.log(sizes); 
+    // console.log(updatedSizes); 
+    // console.log(
+    //   `Delete Clicked at size index ${sizeIndex} and color index ${colorIndex}`
+    // );
   };
 
   const handleColorChange = (sizeIndex, colorIndex, event) => {
@@ -422,6 +422,9 @@ const AddProduct = () => {
                             <div className="kb-modal-data-title">
                               <div className="kb-data-title">
                                 <h6>Product Thumbnail</h6>
+                                <Typography variant="body2">
+                                  Thumbnail size (500px * 500px)
+                                </Typography>
                               </div>
                             </div>
 
@@ -500,7 +503,10 @@ const AddProduct = () => {
                           <div className="kb-data-box">
                             <div className="kb-modal-data-title">
                               <div className="kb-data-title">
-                                <h6>Multiple File Upload With Preview</h6>
+                                <h6>Product Images</h6>
+                                <Typography variant="body2">
+                                  Product Image size (500px * 500px)
+                                </Typography>
                               </div>
                             </div>
 
